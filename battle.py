@@ -6,7 +6,7 @@ import dicts
 
 color = dicts.Color
 
-player = p.Profession("priest")
+player = p.Class("priest")
 enemy = e.Enemy(0)
 battle_ended = False
 
@@ -185,6 +185,6 @@ def win():
     loot_money = (enemy.tier - 1) * 37 + r.randint(0, 36)
     player.money = player.money + loot_money
     player.enemies_killed = player.enemies_killed + 1
-    print(color.GREEN + 'You have won, nice, now you killed ' + str(player.enemies_killed) + ' already' + color.END)
+    print(color.GREEN + "You have won, nice, now you've killed " + str(player.enemies_killed) + ' enemies already' + color.END)
     print(color.YELLOW + 'You got ' + str(loot_money) + ' money from ' + enemy.name + ' corpse' + color.END)
     battle_ended = True

@@ -9,7 +9,7 @@ You can run it by just typing:
 * Plot
 
   You are sleeping adventure whose dreaming mind created imaginary universe. 
-  You main goal is to wake up. Thats all for now.
+  Your main goal is to wake up. Thats all for now.
 
 * Mechanics
 

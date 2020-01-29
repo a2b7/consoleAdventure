@@ -68,7 +68,7 @@ def battle():
     print(color.GREEN + "You heal yourself for random amount from 1 to 6 plus your bonus healing" + color.END)
     print(color.GREEN + "Write 'run' to run from combat" + color.END)
     print(color.GREEN + "You lose 1 invisibility powder and your enemy disappear without dropping any loot" + color.END)
-    print(color.GREEN + "Write 'suicide' to die and res with full hp is you have any backup lives" + color.END)
+    print(color.GREEN + "Write 'suicide' to die and res with full hp if you have any backup lives" + color.END)
     print(color.GREEN + "You lose 1 life if you have any and are healed to full life" + color.END)
     print()
 
@@ -79,7 +79,7 @@ def battle():
 
 def enemy():
     print(
-        color.GREEN + "Actually they enemies are pretty simple, you hit them until they have 0 health or less, they die, you get loot" + color.END)
+        color.GREEN + "Actually enemies are pretty simple, you hit them until they have 0 health or less, they die, you get loot" + color.END)
     print(
         color.GREEN + "Current enemy has health, attack power and relative speed (slower or faster than you)" + color.END)
     print(

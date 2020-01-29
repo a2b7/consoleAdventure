@@ -14,7 +14,7 @@ color = d.Color
 
 
 adventure_ended = False
-dict = d.Dicts
+dict_class = d.Dicts
 '''
 ---------------------------
 --------start phase--------
@@ -25,35 +25,35 @@ shop_interaction_count = 0
 not_global_command = False
 player_name = input(color.BOLD + "Hello, you name is?\n" + color.END)
 print("Nice to meet you, " + str(player_name))
-print("We have these professions to choose:")
-for key, value in dict.profession.items():
+print("We have these classes to choose:")
+for key, value in dict_class.profession.items():
     print(color.UNDERLINE + str(key) + color.END)
 command = ''
-player_profession_name = ''
+player_class_name = ''
 continue_flag = False
 while not continue_flag:
-    command = input(color.BOLD + "What profession do you want to know about?\n" + color.END)
+    command = input(color.BOLD + "What class do you want to know about?\n" + color.END)
     try:
-        print(dict.profession[command]["story"])
-        player_profession_name = command
+        print(dict_class.profession[command]["story"])
+        player_class_name = command
         continue_flag = True
     except KeyError:
-        print("There is no such command or profession, lets try again")
+        print("There is no such command or class, lets try again")
         continue_flag = False
 
 continue_flag = False
 while not continue_flag and command != 'this':
     command = input(color.BOLD +
-                    "If you want to be " + player_profession_name + " write 'this', otherwise write profession you want to know about\n" + color.END)
+                    "If you want to be " + player_class_name + " write 'this', otherwise write class you want to know about\n" + color.END)
     try:
-        print(dict.profession[command]["story"])
-        player_profession_name = command
+        print(dict_class.profession[command]["story"])
+        player_class_name = command
         continue_flag = False
     except KeyError:
         if command != 'this':
-            print("There is no such command or profession, lets try again")
+            print("There is no such command or class, lets try again")
         continue_flag = False
-player = s.Profession(player_profession_name)
+player = s.Class(player_class_name)
 print("Nice, these are you stats now")
 player.print_stats()
 print()
@@ -96,7 +96,7 @@ while count <= zone_count and not adventure_ended:
             print("Now you're in special zone")
             print(color.RED_BOLD_UNDERLINE + 'reminder:make special zones' + color.END)
         else:
-            print('Now you got to ' + r.sample(dict.zones, 1)[0])
+            print('Now you got to ' + r.sample(dict_class.zones, 1)[0])
             b.battle_flow(player.enemies_killed, player)
     elif command.lower() == 'help':
         h.zone()
